@@ -1,0 +1,13 @@
+version: '2'
+services:
+  goapp:
+    build: ./myapp
+    volumes:
+      - ./myapp:/go/src/myapp
+    ports:
+      - "8088:8088"
+    links:
+      - database
+  database:
+    image: mongo
+
